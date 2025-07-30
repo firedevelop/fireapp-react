@@ -1,69 +1,38 @@
-# React + TypeScript + Vite
+# 🧭 PLAN DE ESTUDIO NUMERADO – React desde cero al éxito en 6 semanas
+Semana 1 – Fundamentos Core de React
+1.1 Crear app con Vite + estructura + JSX
+1.2 Props y estado (useState)
+1.3 Eventos (onClick, onChange)
+1.4 Componentes controlados (formularios)
+1.5 Mini proyecto: Contador interactivo + formulario controlado
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Semana 2 – Efectos y Renderizado
+2.1 useEffect – ciclo de vida
+2.2 Fetching de datos (API pública)
+2.3 Renderizado condicional
+2.4 Listas con .map()
+2.5 Mini proyecto: App de clima o Pokédex sencilla
 
-Currently, two official plugins are available:
+Semana 3 – Estado avanzado
+3.1 Lifting state up (subir estado)
+3.2 Custom hooks
+3.3 Context API
+3.4 Proyecto: ToDo App con contexto y custom hooks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Semana 4 – Routing y organización
+4.1 React Router: rutas públicas y privadas
+4.2 Layouts + navegación
+4.3 Arquitectura de carpetas
+4.4 Proyecto: Dashboard con login ficticio
 
-## Expanding the ESLint configuration
+Semana 5 – Consumo de APIs y Testing
+5.1 Axios y manejo de errores
+5.2 Spinners y feedback al usuario
+5.3 Testing básico con React Testing Library
+5.4 Proyecto CRUD: Gestor de usuarios o productos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Semana 6 – Portafolio y entrevistas
+6.1 Subir proyectos a GitHub
+6.2 Deploy a Vercel
+6.3 Optimizar tu web ...
+6.4 Simulacro de entrevista técnica (con preguntas reales)
