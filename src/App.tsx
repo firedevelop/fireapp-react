@@ -5,6 +5,7 @@ import './App.css'
 import Header from './components/Header'
 import Title from './components/Title'
 import Welcome from './components/Welcome'
+import Counter from './components/Counter'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +15,8 @@ function App() {
       <div>
         <Header />
         <Title />
-        <Welcome name="John" />
+        <Counter />
+        <Welcome name="Manuel" />
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
