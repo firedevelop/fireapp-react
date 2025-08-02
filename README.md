@@ -36,3 +36,21 @@ Semana 6 – Portafolio y entrevistas
 6.2 Deploy a Vercel
 6.3 Optimizar tu web ...
 6.4 Simulacro de entrevista técnica (con preguntas reales)
+
+
+# 🧠 ¿Qué es un evento?
+En React, un evento es una función que se ejecuta cuando el usuario interactúa con algo (como un botón, input, etc.).
+
+# ¿Qué es useState?
+useState(false) no detiene ni pausa un evento.
+
+👉 Lo que sí hace es crear una “variable reactiva” que le dice a React cuándo debe volver a renderizar el componente.
+
+En este caso:
+const [mostrar, setMostrar] = useState(false);
+mostrar es una variable de estado que React “vigila”.
+
+setMostrar es una función para cambiar ese estado.
+
+Cuando usas setMostrar(true), le estás diciendo a React: “Ey, ha cambiado el estado, vuelve a pintar el componente”.
+

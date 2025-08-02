@@ -10,4 +10,3 @@ export default function Counter() {
   )
 }
 
-import {useState} from 'react'

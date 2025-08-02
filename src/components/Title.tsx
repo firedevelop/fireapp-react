@@ -1,3 +1,3 @@
 export default function Title(){
-    return <h1 style={{background: 'yellow'}}>FireApp title</h1>
+    return <p style={{background: 'yellow'}}>FireApp title</p>
 }
