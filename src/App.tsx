@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header'
 import Title from './components/Title'
@@ -8,6 +6,8 @@ import Welcome from './components/Welcome'
 import Counter from './components/Counter'
 import ClickLogger from './components/ClickLogger'
 import Bienvenida from './components/Bienvenida'
+import Formulario from './components/Formulario'
+import FormularioRegistro from './components/FormularioRegistro'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,12 +15,15 @@ function App() {
   return (
     <>
       <div>
+        <FormularioRegistro />
+        <Formulario />
         <Header />
         <Title />
         <Counter />
         <Welcome name="Manuel" />
         <ClickLogger />
         <Bienvenida mensaje="¡Bienvenido FireApp!"/>
+
 
         
       </div>
