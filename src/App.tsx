@@ -9,7 +9,8 @@ import Bienvenida from './components/Bienvenida'
 import Formulario from './components/Formulario'
 import FormularioRegistro from './components/FormularioRegistro'
 import EffectoInicial from './components/EffectoInicial'
-import UseEffectDemo from './components/02-hooks/02.01-useEffect'
+import UseEffectDemo from './components/02.01-useEffect'
+import MensajeConRetraso from './components/02.02-useEffectTimeout'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <div>
+        <MensajeConRetraso />
         <UseEffectDemo />
         <EffectoInicial/>
         <FormularioRegistro />
