@@ -11,6 +11,7 @@ import FormularioRegistro from './components/FormularioRegistro'
 import EffectoInicial from './components/EffectoInicial'
 import UseEffectDemo from './components/02.01-useEffect'
 import MensajeConRetraso from './components/02.02-useEffectTimeout'
+import ListaUsuariosConEstado from './components/02.03-useEffectLoadingError'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <div>
+        <ListaUsuariosConEstado />
         <MensajeConRetraso />
         <UseEffectDemo />
         <EffectoInicial/>
