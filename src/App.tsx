@@ -8,6 +8,8 @@ import ClickLogger from './components/ClickLogger'
 import Bienvenida from './components/Bienvenida'
 import Formulario from './components/Formulario'
 import FormularioRegistro from './components/FormularioRegistro'
+import EffectoInicial from './components/EffectoInicial'
+import UseEffectDemo from './components/02-hooks/02.01-useEffect'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +17,8 @@ function App() {
   return (
     <>
       <div>
+        <UseEffectDemo />
+        <EffectoInicial/>
         <FormularioRegistro />
         <Formulario />
         <Header />

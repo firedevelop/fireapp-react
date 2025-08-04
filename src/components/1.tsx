@@ -14,18 +14,11 @@ export default function FormularioRegistro() {
     <div>
       {!enviado ? (
         <>
-          <input
-            type="text"
-            placeholder="Tu nombre"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Tu email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          /> 
+<input
+  type="text" placeholder="Tu nombre"
+  value={name} onChange={(e) => setName(e.target.value)} />
+<input type="email" placeholder="Tu email"
+value={email} onChange={(e) => setEmail(e.target.value)} /> 
           <button onClick={handleSubmit}>Enviar</button>
         </>
       ) : (
