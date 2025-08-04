@@ -12,6 +12,7 @@ import EffectoInicial from './components/EffectoInicial'
 import UseEffectDemo from './components/02.01-useEffect'
 import MensajeConRetraso from './components/02.02-useEffectTimeout'
 import ListaUsuariosConEstado from './components/02.03-useEffectLoadingError'
+import CharacterList from './components/02.04-MiniProyecto/CharacterList'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <div>
+        <CharacterList />
         <ListaUsuariosConEstado />
         <MensajeConRetraso />
         <UseEffectDemo />
