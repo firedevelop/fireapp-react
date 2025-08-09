@@ -1,29 +1,38 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-export default function FormularioRegistro() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [enviado, setEnviado] = useState(false)
+type Character = {
+  id: number
+  name: string
+  image: string
+}
 
-  const handleSubmit = () => {
-    // podrías validar aquí si quieres
-    setEnviado(true)
-  }
+export default function CharacterList() {
+  const [characters, setCharacters] = useState<Character[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    fetch('https://rickandmortyapi.com/api/character')
+      .then((res) => {
+        if (!res.ok) throw new Error('Error al cargar personajes')
+        return res.json()
+      })
+      .then((data) => setCharacters(data.results))
+      .catch(() => setError(true))
+      .finally(() => setLoading(false))
+  }, [])
+
+  if (loading) return <p>⏳ Cargando personajes...</p>
+  if (error) return <p>❌ Error al cargar datos.</p>
 
   return (
-    <div>
-      {!enviado ? (
-        <>
-<input
-  type="text" placeholder="Tu nombre"
-  value={name} onChange={(e) => setName(e.target.value)} />
-<input type="email" placeholder="Tu email"
-value={email} onChange={(e) => setEmail(e.target.value)} /> 
-          <button onClick={handleSubmit}>Enviar</button>
-        </>
-      ) : (
-        <p>¡Gracias por registrarte, {name}!</p>
-      )}
-    </div>
+    <ul>
+      {characters.map((char) => (
+        <li key={char.id}>
+          <img src={char.image} alt={char.name} width={80} />
+          <p>{char.name}</p>
+        </li>
+      ))}
+    </ul>
   )
 }

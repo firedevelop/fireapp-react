@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 export default function MensajeConRetraso() {
   const [visible, setVisible] = useState(false)
-
+ 
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true)
@@ -18,3 +18,4 @@ export default function MensajeConRetraso() {
     </div>
   )
 }
+
