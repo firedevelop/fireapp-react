@@ -1,38 +1,24 @@
-import { useEffect, useState } from 'react'
+import React, { useState } from "react";
 
-type Character = {
-  id: number
-  name: string
-  image: string
+function Counter({ count, onIncrement }) {
+  return (
+    <div>
+      <p>Valor: {count}</p>
+      <button onClick={onIncrement}>Incrementar</button>
+    </div>
+  );
 }
 
-export default function CharacterList() {
-  const [characters, setCharacters] = useState<Character[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
+export default function App() {
+  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
-      .then((res) => {
-        if (!res.ok) throw new Error('Error al cargar personajes')
-        return res.json()
-      })
-      .then((data) => setCharacters(data.results))
-      .catch(() => setError(true))
-      .finally(() => setLoading(false))
-  }, [])
-
-  if (loading) return <p>⏳ Cargando personajes...</p>
-  if (error) return <p>❌ Error al cargar datos.</p>
+  const handleIncrement = () => setCount(count + 1);
 
   return (
-    <ul>
-      {characters.map((char) => (
-        <li key={char.id}>
-          <img src={char.image} alt={char.name} width={80} />
-          <p>{char.name}</p>
-        </li>
-      ))}
-    </ul>
-  )
+    <div>
+      <h1>Lifting State Up</h1>
+      <Counter count={count} onIncrement={handleIncrement} />
+      <Counter count={count} onIncrement={handleIncrement} />
+    </div>
+  );
 }
