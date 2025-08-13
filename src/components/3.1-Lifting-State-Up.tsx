@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Counter({ count, onIncrement }) {
   return (
@@ -9,14 +9,13 @@ function Counter({ count, onIncrement }) {
   );
 }
 
-export default function App() {
+export default function LiftingStateUp() {
   const [count, setCount] = useState(0);
 
   const handleIncrement = () => setCount(count + 1);
 
   return (
     <div>
-      <h1>Lifting State Up</h1>
       <Counter count={count} onIncrement={handleIncrement} />
       <Counter count={count} onIncrement={handleIncrement} />
     </div>

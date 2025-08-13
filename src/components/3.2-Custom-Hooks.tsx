@@ -8,7 +8,7 @@ function useCounter(initialValue = 0) {
   return { count, increment, decrement, reset };
 }
 
-export default function App() {
+export default function CustomHooks() {
   const counter1 = useCounter(0);
   const counter2 = useCounter(10);
 
