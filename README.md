@@ -54,3 +54,8 @@ setMostrar es una función para cambiar ese estado.
 
 Cuando usas setMostrar(true), le estás diciendo a React: “Ey, ha cambiado el estado, vuelve a pintar el componente”.
 
+¡Absolutamente! Este es un ejemplo fantástico para explicar el **Context API** de React, una herramienta poderosa para evitar un problema conocido como **"prop drilling"**.
+
+Vamos a analizarlo línea por línea para entender cómo funciona este mecanismo de compartir estado sin pasar props manualmente a través de muchos niveles.
+
+

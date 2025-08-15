@@ -14,7 +14,7 @@ import MensajeConRetraso from './components/02.02-useEffectTimeout'
 import ListaUsuariosConEstado from './components/02.03-useEffectLoadingError'
 import CharacterList from './components/02.04-MiniProyecto/CharacterList'
 import LiftingStateUp from './components/3.1-Lifting-State-Up'
-import CustomHooks from './components/3.2-Custom-Hooks'
+import ContextAPI from './components/3.3-Context-API'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,9 +22,10 @@ function App() {
   return (
     <>
       <div>
-        <CustomHooks />
+        <ContextAPI />
+        {/*<CustomHooks />
         <LiftingStateUp />
-        {/* <CharacterList />
+         <CharacterList />
         <ListaUsuariosConEstado />
         <MensajeConRetraso />
         <UseEffectDemo />

@@ -1,32 +1,41 @@
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-function useCounter(initialValue = 0) {
-  const [count, setCount] = useState(initialValue);
-  const increment = () => setCount((c) => c + 1);
-  const decrement = () => setCount((c) => c - 1);
-  const reset = () => setCount(initialValue);
-  return { count, increment, decrement, reset };
-}
+const ThemeContext = createContext();
 
-export default function CustomHooks() {
-  const counter1 = useCounter(0);
-  const counter2 = useCounter(10);
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
-    <div>
-      <h1>Custom Hooks</h1>
-      <div>
-        <p>Counter 1: {counter1.count}</p>
-        <button onClick={counter1.increment}>+</button>
-        <button onClick={counter1.decrement}>-</button>
-        <button onClick={counter1.reset}>Reset</button>
-      </div>
-      <div>
-        <p>Counter 2: {counter2.count}</p>
-        <button onClick={counter2.increment}>+</button>
-        <button onClick={counter2.decrement}>-</button>
-        <button onClick={counter2.reset}>Reset</button>
-      </div>
-    </div>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemedButton() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  return (
+    <button
+      onClick={toggleTheme}
+      style={{
+        background: theme === "light" ? "#fff" : "#333",
+        color: theme === "light" ? "#333" : "#fff",
+        padding: "10px",
+        margin: "10px"
+      }}
+    >
+      Cambiar a {theme === "light" ? "Oscuro" : "Claro"}
+    </button>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <h1>Context API</h1>
+      <ThemedButton />
+    </ThemeProvider>
   );
 }

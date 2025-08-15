@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const ThemeContext = createContext();
 
@@ -31,7 +31,7 @@ function ThemedButton() {
   );
 }
 
-export default function App() {
+export default function ContextAPI() {
   return (
     <ThemeProvider>
       <h1>Context API</h1>
