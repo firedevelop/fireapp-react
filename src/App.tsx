@@ -15,6 +15,7 @@ import ListaUsuariosConEstado from './components/02.03-useEffectLoadingError'
 import CharacterList from './components/02.04-MiniProyecto/CharacterList'
 import LiftingStateUp from './components/3.1-Lifting-State-Up'
 import ContextAPI from './components/3.3-Context-API'
+import ProyectoToDoApp from './components/3.4-ProyectoToDoApp'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <div>
+        <ProyectoToDoApp />
         <ContextAPI />
         {/*<CustomHooks />
         <LiftingStateUp />

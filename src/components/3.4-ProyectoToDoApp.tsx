@@ -1,28 +1,43 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
+
+// --- Tipos ---
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
+interface TodoContextType {
+  todos: Todo[];
+  addTodo: (text: string) => void;
+  toggleTodo: (id: number) => void;
+  removeTodo: (id: number) => void;
+}
 
 // --- Custom Hook ---
-function useTodos() {
-  const [todos, setTodos] = useState([]);
+function useTodos(): TodoContextType {
+  const [todos, setTodos] = useState<Todo[]>([]);
 
-  const addTodo = (text) =>
+  const addTodo = (text: string) =>
     setTodos([...todos, { id: Date.now(), text, completed: false }]);
 
-  const toggleTodo = (id) =>
+  const toggleTodo = (id: number) =>
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
 
-  const removeTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
+  const removeTodo = (id: number) =>
+    setTodos(todos.filter((todo) => todo.id !== id));
 
   return { todos, addTodo, toggleTodo, removeTodo };
 }
 
 // --- Context ---
-const TodoContext = createContext();
+const TodoContext = createContext<TodoContextType | null>(null);
 
-function TodoProvider({ children }) {
+function TodoProvider({ children }: { children: ReactNode }) {
   const todoLogic = useTodos();
   return (
     <TodoContext.Provider value={todoLogic}>
@@ -32,7 +47,9 @@ function TodoProvider({ children }) {
 }
 
 function useTodoContext() {
-  return useContext(TodoContext);
+  const context = useContext(TodoContext);
+  if (!context) throw new Error("useTodoContext debe usarse dentro de TodoProvider");
+  return context;
 }
 
 // --- Components ---
@@ -69,7 +86,7 @@ function TodoList() {
             onClick={() => toggleTodo(todo.id)}
             style={{
               textDecoration: todo.completed ? "line-through" : "none",
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             {todo.text}
@@ -81,10 +98,10 @@ function TodoList() {
   );
 }
 
-export default function App() {
+export default function ProyectoToDoApp() {
   return (
     <TodoProvider>
-      <h1>ToDo App con Context y Custom Hooks</h1>
+      <h4>ToDo App con Context y Custom Hooks</h4>
       <TodoInput />
       <TodoList />
     </TodoProvider>
