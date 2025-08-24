@@ -19,7 +19,7 @@ function useTodos(): TodoContextType {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (text: string) =>
-    setTodos([...todos, { id: Date.now(), text, completed: false }]);
+    setTodos([...todos, { id: Date.now() , text, completed: false }]);
 
   const toggleTodo = (id: number) =>
     setTodos(
@@ -44,7 +44,7 @@ function TodoProvider({ children }: { children: ReactNode }) {
       {children}
     </TodoContext.Provider>
   );
-}
+}]]
 
 function useTodoContext() {
   const context = useContext(TodoContext);
@@ -86,9 +86,7 @@ function TodoList() {
             onClick={() => toggleTodo(todo.id)}
             style={{
               textDecoration: todo.completed ? "line-through" : "none",
-              cursor: "pointer",
-            }}
-          >
+              cursor: "pointer",}}>
             {todo.text}
           </span>
           <button onClick={() => removeTodo(todo.id)}>X</button>

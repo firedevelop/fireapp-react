@@ -19,7 +19,7 @@ function useTodos(): TodoContextType {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (text: string) =>
-    setTodos([...todos, { id: Date.now(), text, completed: false }]);
+    setTodos([...todos, { id: Date.now() , text, completed: false }]);
 
   const toggleTodo = (id: number) =>
     setTodos(
